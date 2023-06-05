@@ -17,13 +17,21 @@ class Game
     result
   end
 
+  def logo
+    puts "
+█▀▀ █▀█ █▄░█ █▄░█ █▀▀ █▀▀ ▀█▀ ▄▄ █░█
+█▄▄ █▄█ █░▀█ █░▀█ ██▄ █▄▄ ░█░ ░░ ▀▀█\n\n"
+  end
+
   def display_grid
     clear_screen
+    logo
     print "1 2 3 4 5 6 7\n"
     @grid.each do
       |row|
       print row.join("") + "\n"
     end
+    print"\n"
     @grid
   end
 
@@ -117,6 +125,7 @@ class Game
 
   def play_game
     clear_screen
+    logo
     get_mode
     until @game_won == true
       get_choice(player1)
